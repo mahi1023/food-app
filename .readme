@@ -1,0 +1,33 @@
+# Food DeliveryApp
+/*
+Components
+ Header 
+    - Logo
+    - Nav Item
+ Body
+    - search Comp
+    - retro main card
+    - retro card
+        - image
+        -Name of resturant 
+        -cusines
+        -star Ratings, delivery time
+
+Footer
+    - copyright
+    - links
+*/
+
+Two types of export/import
+
+-- deafult export
+export defalt component/varaible
+import component from 'path'
+
+-- named export/import
+export const component
+import {componnet} from 'path'
+
+# react hooks
+- normal javascript utily functions written by facebook 
+- they have written this code insid ethe react package
