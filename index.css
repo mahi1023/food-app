@@ -22,8 +22,11 @@
     margin: 10px;
     list-style: none;
 }
-.search, .filter{
+.search{
     padding: 10px;
+}
+.filter{
+    display: flex;
 }
 .filter-btn{
     margin:10px ;
@@ -84,4 +87,19 @@
 }
 .icons{
 
+}
+.shimmer-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+.login-btn{
+    padding: 0 25px;
+    cursor: pointer;
 }

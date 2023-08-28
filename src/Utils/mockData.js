@@ -1,75 +1,30 @@
 const resList =[
+
 {
-    name: "Meghana",
-    avgRating: 4.5,
-    cusine: ["briyani", "cooldrin", "wswd"],
-    deliveryTime: "30 mins",
-    costforTwo: 2000,
-    imgLink: "82e249f0349f72c653648e7ae9eb1cea",
+  "info": {
+    "id": "65797",
+    "name": "Leon's - Burgers & Wings (Leon Grill)",
+    "cloudinaryImageId": "r4ufflqojich0r29efvc",
+    "costForTwo": "₹300 for two",
+    "cuisines": [
+      "American",
+      "Snacks",
+      "Turkish",
+      "Portuguese",
+      "Continental"
+    ],
+    "avgRating": 4.3,
+   
+  
+    "sla": {
+      "deliveryTime": 24,
+      "lastMileTravel": 1.3,
+      "serviceability": "SERVICEABLE",
+      "slaString": "24 mins",
+      "lastMileTravelString": "1.3 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    }, 
   },
-  {
-    name: "KFC",
-    avgRating: 3.5,
-    cusine: ["french fries", "cooldrink", "finger-licking"],
-    deliveryTime: "10 mins",
-    costforTwo: 2000,
-    imgLink: "849ebba84be915320df297403db336df",
-  },
-  {
-    name: "Dumb Briyani",
-    avgRating: 2.5,
-    cusine: ["muuton briyani", "cooldrin", "wswd"],
-    deliveryTime: "20 mins",
-    costforTwo: 2000,
-    imgLink: "nedd2b7hwpgne3kzdnok",
-  },
-  {
-    name: "Meghana",
-    avgRating: 4.5,
-    cusine: ["briyani", "cooldrin", "wswd"],
-    deliveryTime: "30 mins",
-    costforTwo: 2000,
-    imgLink: "82e249f0349f72c653648e7ae9eb1cea",
-  },
-  {
-    name: "KFC",
-    avgRating: 3.5,
-    cusine: ["french fries", "cooldrink", "finger-licking"],
-    deliveryTime: "10 mins",
-    costforTwo: 2000,
-    imgLink: "849ebba84be915320df297403db336df",
-  },
-  {
-    name: "Dumb Briyani",
-    avgRating: 2.5,
-    cusine: ["muuton briyani", "cooldrin", "wswd"],
-    deliveryTime: "20 mins",
-    costforTwo: 2000,
-    imgLink: "nedd2b7hwpgne3kzdnok",
-  },
-  {
-    name: "Meghana",
-    avgRating: 4.5,
-    cusine: ["briyani", "cooldrin", "wswd"],
-    deliveryTime: "30 mins",
-    costforTwo: 2000,
-    imgLink: "82e249f0349f72c653648e7ae9eb1cea",
-  },
-  {
-    name: "KFC",
-    avgRating: 3.5,
-    cusine: ["french fries", "cooldrink", "finger-licking"],
-    deliveryTime: "10 mins",
-    costforTwo: 2000,
-    imgLink: "849ebba84be915320df297403db336df",
-  },
-  {
-    name: "Dumb Briyani",
-    avgRating: 2.5,
-    cusine: ["muuton briyani", "cooldrin", "wswd"],
-    deliveryTime: "20 mins",
-    costforTwo: 2000,
-    imgLink: "nedd2b7hwpgne3kzdnok",
-  }];
+}];
 
   export default resList
