@@ -18,6 +18,7 @@ const Body = () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
+    if(data.ok){
     const res = await data.json();
     console.log(res);
     //updaing the stat e to render the latest data
@@ -25,6 +26,10 @@ const Body = () => {
       res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFileterRestro(res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+    else{
+      alert("error with api")
+    }
   };
   let id = Math.random(1, 200).toFixed(2);
   console.log(id);
@@ -63,8 +68,12 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const list = listofRest.filter((obj) => obj.avgRating > 4);
+            const list = listofRest.filter((obj) => {
+            return   obj.info.avgRating > 4;
+            })
+
             setListofRest(list);
+            setFileterRestro(list)
             console.log(list);
           }}
         >
