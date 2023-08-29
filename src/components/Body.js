@@ -53,7 +53,7 @@ const Body = () => {
             onChange={onTextChange}
             value={searchText}
           ></input>
-          <button
+          <button className="search-btn"
             onClick={() => {
               //Fileter restro card based on search
               console.log(searchText);
@@ -83,7 +83,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterRestro.map((obj, i) => {
-          return <Link to ={'/resturants/'+obj.info.id}key={obj.info.id}><RestroCard  resData={obj} /></Link>;
+          return <Link  className="link-restro-cards" to ={'/resturants/'+obj.info.id}key={obj.info.id}><RestroCard  resData={obj} /></Link>;
         })}
       </div>
     </div>

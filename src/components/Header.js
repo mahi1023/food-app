@@ -20,9 +20,9 @@ export const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li><Link to ='/'>Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
+          <li><Link className="link-header" to ='/'>Home</Link></li>
+          <li><Link className="link-header" to="/about">About</Link></li>
+          <li><Link  className="link-header" to="/contact">Contact Us</Link></li>
           <li>Cart</li>
           <button
             className="login-btn"
