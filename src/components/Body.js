@@ -2,6 +2,7 @@ import RestroCard from "./RestroCard";
 import resList from "../utils/mockData";
 import React, { useState, useEffect } from "react";
 import { Shimmer } from "./Shimmer";
+import { Link } from "react-router-dom";
 const Body = () => {
   //local state varaible
   console.log("body render");
@@ -82,7 +83,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterRestro.map((obj, i) => {
-          return <RestroCard key={i} resData={obj} />;
+          return <Link to ={'/resturants/'+obj.info.id}key={obj.info.id}><RestroCard  resData={obj} /></Link>;
         })}
       </div>
     </div>
