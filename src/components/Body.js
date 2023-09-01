@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import React, { useState, useEffect } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../Utils/useOnlineStatus";
 const Body = () => {
   //local state varaible
   console.log("body render");
@@ -41,6 +42,10 @@ const Body = () => {
   const onTextChange = (event) => {
     setSearchText(event.target.value);
   };
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false){
+    return <h1>U are offline</h1>
+  }
   return listofRest.length === 0 ? (
     <Shimmer></Shimmer>
   ) : (
