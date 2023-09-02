@@ -2,6 +2,8 @@ import { HEADER_LOGO } from "../utils/contants";
 import React, { useState ,useEffect} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import { FaCheck } from "react-icons/fa";
+
 export const Header = () => {
   const [login, setLogin] = useState("Login");
   var btnName = "Login";
@@ -15,13 +17,14 @@ export const Header = () => {
     console.log("useEffect render")
   },[login])
   return (
-    <div className="flex justify-between bg-orange-200 shadow-lg mb-2 sm:bg-yellow-100 lg:bg-green-400">
+    <div className="flex justify-between bg-orange-400 h-[60px] shadow-lg mb-2 sm:bg-orange-400 lg:bg-orange-400">
       <div className="logo-container">
-        <img className="w-56" src={HEADER_LOGO} />
+        <img className=" w-20" src={HEADER_LOGO} />
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
-          <li>online Sttaus :{onlineStatis?'green':'orange'}</li>
+          <FaCheck color={onlineStatis?'green':'gray'} ></FaCheck>
+          {/* <li>online Sttaus :{onlineStatis?'green':'orange'}</li> */}
           <li><Link className="px-4" to ='/'>Home</Link></li>
           <li><Link className="px-4" to="/about">About</Link></li>
           <li><Link  className="px-4" to="/contact">Contact Us</Link></li>

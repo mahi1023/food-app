@@ -50,15 +50,15 @@ const Body = () => {
     <Shimmer></Shimmer>
   ) : (
     <div className="body">
-      <div className="flex">
-        <div className="search m-4 p-4">
+      <div className="flex  justify-center">
+        <div className="search m-4 p-4 ">
           <input
             type="text"
-            className="border border-solid border-black"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg h-[40px] w-[250px] focus:ring-blue-500 focus:border-blue-300"
             onChange={onTextChange}
             value={searchText}
           ></input>
-          <button className="px-4 py-1 bg-green-100 m-4 font-semibold rounded-lg "
+          <button className="px-4 py-1 bg-orange-400 m-4 font-semibold rounded-lg h-[40px] w-[100px] "
             onClick={() => {
               //Fileter restro card based on search
               console.log(searchText);
@@ -73,7 +73,7 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4 flex items-center">
         <button
-          className="px-4 py-2 bg-green-50 rounded-lg"
+          className="px-4 py-2 bg-orange-400 rounded-lg"
           onClick={() => {
             const list = listofRest.filter((obj) => {
             return   obj.info.avgRating > 4;
