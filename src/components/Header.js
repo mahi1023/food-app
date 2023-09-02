@@ -15,20 +15,20 @@ export const Header = () => {
     console.log("useEffect render")
   },[login])
   return (
-    <div className="header">
+    <div className="flex justify-between bg-orange-200 shadow-lg mb-2 sm:bg-yellow-100 lg:bg-green-400">
       <div className="logo-container">
-        <img className="logo" src={HEADER_LOGO} />
+        <img className="w-56" src={HEADER_LOGO} />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
           <li>online Sttaus :{onlineStatis?'green':'orange'}</li>
-          <li><Link className="link-header" to ='/'>Home</Link></li>
-          <li><Link className="link-header" to="/about">About</Link></li>
-          <li><Link  className="link-header" to="/contact">Contact Us</Link></li>
-          <li><Link   className="link-header" to ='/grocery'>Grocery</Link></li>
+          <li><Link className="px-4" to ='/'>Home</Link></li>
+          <li><Link className="px-4" to="/about">About</Link></li>
+          <li><Link  className="px-4" to="/contact">Contact Us</Link></li>
+          <li><Link   className="px-4" to ='/grocery'>Grocery</Link></li>
           <li>Cart</li>
           <button
-            className="login-btn"
+            className="px-4"
             onClick={() => {
               // btnName ='LogOut';
               login === "Login" ? setLogin("LogOut") : setLogin("Login");

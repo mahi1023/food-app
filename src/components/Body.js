@@ -50,15 +50,15 @@ const Body = () => {
     <Shimmer></Shimmer>
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             onChange={onTextChange}
             value={searchText}
           ></input>
-          <button className="search-btn"
+          <button className="px-4 py-1 bg-green-100 m-4 font-semibold rounded-lg "
             onClick={() => {
               //Fileter restro card based on search
               console.log(searchText);
@@ -71,8 +71,9 @@ const Body = () => {
             Search
           </button>
         </div>
+        <div className="search m-4 p-4 flex items-center">
         <button
-          className="filter-btn"
+          className="px-4 py-2 bg-green-50 rounded-lg"
           onClick={() => {
             const list = listofRest.filter((obj) => {
             return   obj.info.avgRating > 4;
@@ -85,8 +86,10 @@ const Body = () => {
         >
           Top Rated Resturant
         </button>
+        </div>
+        
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filterRestro.map((obj, i) => {
           return <Link  className="link-restro-cards" to ={'/resturants/'+obj.info.id}key={obj.info.id}><RestroCard  resData={obj} /></Link>;
         })}
