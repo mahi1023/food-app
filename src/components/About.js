@@ -21,16 +21,12 @@ class About extends Component{
         console.log('Parent render')
 
     return(
-        <div>
-                <h1>About</h1>
-                <h2>This is namestey raect web seris</h2>
+        <div className="flex flex-row justify-center items-center">
+        <div className=" flex flex-col items-center w-[240px]  ">
+                <h1 className="text-md font-bold">About This Accont</h1>
                 <UserClass name="Maheswari Class" location="Guntur class"/>            
         </div>
-
-
-
-                
-               
+        </div>            
     )
     }
 }
