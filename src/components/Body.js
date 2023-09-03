@@ -1,4 +1,4 @@
-import RestroCard from "./RestroCard";
+import RestroCard,{withRestroCardWithPromoted} from "./RestroCard";
 import resList from "../utils/mockData";
 import React, { useState, useEffect } from "react";
 import { Shimmer } from "./Shimmer";
@@ -12,6 +12,7 @@ const Body = () => {
   const [listofRest, setListofRest] = arr;
   const [searchText, setSearchText] = useState("");
   const [filterRestro,setFileterRestro] = useState([]);
+  const RestroCardWithCOmponent = withRestroCardWithPromoted(RestroCard);
   useEffect(() => {
     console.log("useEffect");
     fetchData();
@@ -27,6 +28,7 @@ const Body = () => {
     setListofRest(
       res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(listofRest)
     setFileterRestro(res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     else{
@@ -91,7 +93,10 @@ const Body = () => {
       </div>
       <div className="flex flex-wrap">
         {filterRestro.map((obj, i) => {
-          return <Link  className="link-restro-cards" to ={'/resturants/'+obj.info.id}key={obj.info.id}><RestroCard  resData={obj} /></Link>;
+          return <Link  className="link-restro-cards" to ={'/resturants/'+obj.info.id}key={obj.info.id}>
+            {obj.info.aggregatedDiscountInfoV3.header > '20% OFF'? <RestroCardWithCOmponent resData ={obj}/>: <RestroCard  resData={obj} />}
+            {/* <RestroCard  resData={obj} /> */}
+            </Link>;
         })}
       </div>
     </div>

@@ -10,7 +10,7 @@ const RestroCard = (props) => {
     const {deliveryTime} = resData?.info?.sla;
     
   return (
-    <div className="m-4 p-4 w-[300px] rounded-lg bg-gray-100 hover:bg-gray-200 relative bottom-[30px] left-0 right-0 " >
+    <div className="m-4 p-4 w-[300px] rounded-lg bg-gray-100 hover:bg-gray-200 " >
       <img className="rounded-lg px-2 w-[280px] h-[170px]" src={CDN_URL + cloudinaryImageId} />
       <h3 className="font-bold py-4 text-lg">{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
@@ -23,5 +23,17 @@ const RestroCard = (props) => {
     </div>
   );
 };
+
+
+export const withRestroCardWithPromoted = (RestroCard) =>{
+  return(props) =>{
+    return(
+      <div className="relative">
+        <label className="absolute top-2 left-2 m-2 p-2 bg-black rounded-lg text-white" >{props.resData.info.aggregatedDiscountInfoV3.header}</label>
+        <RestroCard {...props}/>
+      </div>
+    )
+  }
+}
 import { CDN_URL } from "../utils/contants";
 export default RestroCard;
