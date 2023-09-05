@@ -47,6 +47,7 @@ class UserClass extends Component {
           <div className=" flex flex-col items-center">
             <img className="w-[120px] p-4 transform transition-all hover:scale-125" src={avatar_url} />
             <h2>Name:{login}</h2>
+            
             <h3>Location:{public_repos}</h3>
             <h4>Contact:{+91349999999}</h4>
           </div>
