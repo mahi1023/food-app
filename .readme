@@ -31,3 +31,13 @@ import {componnet} from 'path'
 # react hooks
 - normal javascript utily functions written by facebook 
 - they have written this code insid ethe react package
+
+
+#reudx Tool kit
+- Install @reduxjs/tool kit and react-reudx
+- Build our own store
+-connect store to app
+-create a cart slice
+-disptach an Actw
+-selector
+                                     
