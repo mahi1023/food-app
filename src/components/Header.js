@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import { FaCheck } from "react-icons/fa";
 import UserContext from "../Utils/UseContext";
+import { useSelector } from "react-redux";
 export const Header = () => {
   const [login, setLogin] = useState("Login");
   var btnName = "Login";
   console.log("Haeder render");
  const onlineStatis = useOnlineStatus();
  const {loggedInUser} = useContext(UserContext);
- console.log(loggedInUser)
+ console.log(loggedInUser);
+ const cartItems = useSelector((store)=> store.cart.items);
+ console.log(cartItems)
   //if no dependecny array => useEffect is called on every render
   // if depency array is empty = [] =>useEffect is cakked on inital render (just once);
   //if depenecy array is [login] -> useEffect is called everyime when login state varaible is updated.
@@ -31,7 +34,7 @@ export const Header = () => {
           <li><Link className="px-4" to="/about">About</Link></li>
           <li><Link  className="px-4" to="/contact">Contact Us</Link></li>
           <li><Link   className="px-4" to ='/grocery'>Grocery</Link></li>
-          <li>Cart</li>
+          <li><Link className="font-bold" to ="/cart">Cart({cartItems.length} items)</Link></li>
           <button
             className="px-4"
             onClick={() => {
