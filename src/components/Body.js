@@ -1,14 +1,16 @@
 import RestroCard,{withRestroCardWithPromoted} from "./RestroCard";
 import resList from "../utils/mockData";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import UserContext from "../Utils/UseContext";
 const Body = () => {
   //local state varaible
   console.log("body render");
   const arr = useState([]);
   console.log(arr);
+  const {setUserInfo,loggedInUser} = useContext(UserContext)
   const [listofRest, setListofRest] = arr;
   const [searchText, setSearchText] = useState("");
   const [filterRestro,setFileterRestro] = useState([]);
@@ -89,12 +91,15 @@ const Body = () => {
           Top Rated Resturant
         </button>
         </div>
+        <div className="search m-4 p-4 flex items-center">
+         UserName <input className=" border border-black" type="text" value={loggedInUser} onChange={(e) => setUserInfo(e.target.value)}/>
+        </div>
         
       </div>
       <div className="flex flex-wrap">
         {filterRestro.map((obj, i) => {
           return <Link  className="link-restro-cards" to ={'/resturants/'+obj.info.id}key={obj.info.id}>
-            {obj.info.aggregatedDiscountInfoV3.header > '20% OFF'? <RestroCardWithCOmponent resData ={obj}/>: <RestroCard  resData={obj} />}
+            {obj.info.isOpen? <RestroCardWithCOmponent resData ={obj}/>: <RestroCard  resData={obj} />}
             {/* <RestroCard  resData={obj} /> */}
             </Link>;
         })}

@@ -1,10 +1,12 @@
 import { FaClock, FaStar } from "react-icons/fa";
+import UserContext from "../Utils/UseContext";
+import { useContext } from "react";
 const styleCard = {
   backgroundColor: "grey",
 };
-
 const RestroCard = (props) => {
   const { resData } = props;
+  const {loggedInUser} =  useContext(UserContext)
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
     resData?.info;
     const {deliveryTime} = resData?.info?.sla;
@@ -20,6 +22,7 @@ const RestroCard = (props) => {
         <h4 className="flex flex-row justify-center items-center px-8"><FaClock color="gray"></FaClock> {deliveryTime} mins</h4>
       </div>
       <h4 className=""><label className=" text-lg font-bold">Cost </label> {costForTwo }</h4>
+      <h4 className=""><label className=" text-lg font-bold">User </label> {loggedInUser }</h4>
     </div>
   );
 };
@@ -29,7 +32,7 @@ export const withRestroCardWithPromoted = (RestroCard) =>{
   return(props) =>{
     return(
       <div className="relative">
-        <label className="absolute top-2 left-2 m-2 p-2 bg-black rounded-lg text-white" >{props.resData.info.aggregatedDiscountInfoV3.header}</label>
+        <label className="absolute top-2 left-2 m-2 p-2 bg-black rounded-lg text-white" >Opened</label>
         <RestroCard {...props}/>
       </div>
     )

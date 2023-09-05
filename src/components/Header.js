@@ -1,14 +1,16 @@
 import { HEADER_LOGO } from "../utils/contants";
-import React, { useState ,useEffect} from "react";
+import React, { useState ,useEffect,useContext} from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import { FaCheck } from "react-icons/fa";
-
+import UserContext from "../Utils/UseContext";
 export const Header = () => {
   const [login, setLogin] = useState("Login");
   var btnName = "Login";
   console.log("Haeder render");
  const onlineStatis = useOnlineStatus();
+ const {loggedInUser} = useContext(UserContext);
+ console.log(loggedInUser)
   //if no dependecny array => useEffect is called on every render
   // if depency array is empty = [] =>useEffect is cakked on inital render (just once);
   //if depenecy array is [login] -> useEffect is called everyime when login state varaible is updated.
@@ -40,6 +42,7 @@ export const Header = () => {
           >
             {login}
           </button>
+          <li className="px-4">{loggedInUser}</li>
         </ul>
       </div>
     </div>
