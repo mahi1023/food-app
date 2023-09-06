@@ -32,7 +32,9 @@ const ItemList = ({ item }) => {
           </div>
           <div className="w-3/12 p-4">
            <div className="absolute">
-            <button className="p-2 mx-16 bg-black shadow-lg rounded-lg text-white" onClick={()=>handleAddIem(obj)}>Add+</button>
+            <button className="p-2 mx-16 bg-black shadow-lg rounded-lg text-white" onClick={(event)=>{
+              event.preventDefault();
+              handleAddIem(obj)}}>Add+</button>
             </div>
             <img src={CDN_URL + obj.card.info.imageId} className="w-full" />
           </div>
