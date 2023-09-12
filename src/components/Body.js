@@ -57,7 +57,8 @@ const Body = () => {
       <div className="flex  justify-center">
         <div className="search m-4 p-4 ">
           <input
-            type="text"
+            type="text" 
+            data-testid = "searchInput"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg h-[40px] w-[250px] focus:ring-blue-500 focus:border-blue-300"
             onChange={onTextChange}
             value={searchText}

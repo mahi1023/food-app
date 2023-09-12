@@ -40,4 +40,13 @@ import {componnet} from 'path'
 -create a cart slice
 -disptach an Actw
 -selector
-                                     
+
+setting up testing in app
+-install react testing librrary
+-Installed jest
+-Installed Babel dependenices
+-configure Babel-configure parcel config fil eto disable default babel transpilation
+-jest -npx jest --inital
+-install jsdom librrary-install @babel/preset-react -to make jsx work in test case 
+-include @babel/prset-react inside babel.config.js file 
+-npm i -D @testing-library/jest-dom
